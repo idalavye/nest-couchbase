@@ -5,10 +5,10 @@ Couchbase Modules for NestJS projects
 ## Installation
 ```curl
 // npm
-npm i @discovery/nest-couchbase
+npm i nest-couchbase
 
 // yarn
-yarn add @discovery/nest-couchbase
+yarn add nest-couchbase
 ```
 
 ## Usage
