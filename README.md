@@ -48,7 +48,7 @@ export class ApplicationModule {}
 import { Module } from '@nestjs/common';
 import { CbTestController } from './cb-test.controller';
 import { CbTestService } from './cb-test.service';
-import { CouchbaseModule } from '@discovery/nest-couchbase';
+import { CouchbaseModule } from 'nest-couchbase';
 
 @Module({
     imports: [
@@ -70,7 +70,7 @@ export class CbTestModule {}
 import { Module } from '@nestjs/common';
 import { CbTestController } from './cb-test.controller';
 import { CbTestService } from './cb-test.service';
-import { CouchbaseModule } from '@discovery/nest-couchbase';
+import { CouchbaseModule } from 'nest-couchbase';
 
 @Module({
     imports: [
@@ -93,7 +93,7 @@ export class CbTestModule {}
 ### Using In Service (For Default)
 ````typescript
 import { Injectable } from '@nestjs/common';
-import { InjectDefaultCollection, MixinCollection } from '@discovery/nest-couchbase';
+import { InjectDefaultCollection, MixinCollection } from 'nest-couchbase';
 
 @Injectable()
 export class CbTestService {
@@ -110,7 +110,7 @@ export class CbTestService {
 ### Using Cluster Scope Query
 ````typescript
 import { Injectable } from '@nestjs/common';
-import { InjectCouchbaseCluster, Cluster } from '@discovery/nest-couchbase';
+import { InjectCouchbaseCluster, Cluster } from 'nest-couchbase';
 
 @Injectable()
 export class CbTestService {
