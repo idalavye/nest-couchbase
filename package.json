@@ -10,9 +10,6 @@
     "type": "git",
     "url": "https://github.com/idalavye/nest-couchbase"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/idalavye"
-  },
   "scripts": {
     "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",

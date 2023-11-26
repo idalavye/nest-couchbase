@@ -1,4 +1,5 @@
 ## Description
+[![npm version](https://badge.fury.io/js/nest-couchbase.svg)](https://www.npmjs.com/package/nest-couchbase)
 
 Couchbase Modules for NestJS projects
 
