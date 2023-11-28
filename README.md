@@ -28,10 +28,10 @@ We can add this configs in ApplicationModule.ts
                     password: '<password>',
                     buckets: [
                         {
-                            name: 'sponsored-collection',
+                            bucket: 'sponsored-collection',
                         },
                         {
-                            name: 'browsing-sellerads',
+                            bucket: 'browsing-sellerads',
                         },
                     ],
                 };
