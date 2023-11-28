@@ -34,13 +34,9 @@ export class CouchbaseConnectionFactory {
         password: this.config.password,
       });
     } catch (e) {
-      this.logger.error(
-        `Connection failed, trying deprecated method! Reason: ${JSON.stringify(
+      console.error(`Connection failed, trying deprecated method! Reason: ${JSON.stringify(
           e,
-        )}`,
-        JSON.stringify(e.trace ?? e.stack),
-        'CouchbaseAdapter::connect',
-      );
+      )}`)
 
       this.cluster = new couchbase.Cluster(this.config.uri, {
         username: this.config.username,
@@ -49,9 +45,14 @@ export class CouchbaseConnectionFactory {
     }
 
     this.bucketManager = this.cluster.buckets();
-    this.config.buckets.forEach((config) => {
-      this.buckets[config.bucket] = this.cluster.bucket(config.bucket);
-    });
+    try {
+      this.config.buckets.forEach((config) => {
+        this.buckets[config.bucket] = this.cluster.bucket(config.bucket);
+      });
+    }catch (e) {
+      throw new BadRequestException('bucket not found');
+    }
+
   }
 
   async getDefaultCollection(configs: DefaultCollection): Promise<Collection> {
