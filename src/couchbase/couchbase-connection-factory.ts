@@ -14,14 +14,12 @@ export class CouchbaseConnectionFactory {
 
   constructor(
     public config: CouchbaseConnectionConfigs,
-    public logger: Logger,
   ) {}
 
   static async create(
     config: CouchbaseConnectionConfigs,
-    logger: Logger,
   ): Promise<CouchbaseConnectionFactory> {
-    const conn = new CouchbaseConnectionFactory(config, logger);
+    const conn = new CouchbaseConnectionFactory(config);
     await conn.createCluster();
 
     return conn;
