@@ -98,7 +98,7 @@ import { InjectDefaultCollection, MixinCollection } from 'nest-couchbase';
 
 @Injectable()
 export class CbTestService {
-    constructor(@InjectDefaultCollection('SponsoredCollection') private collection: MixinCollection) {}
+    constructor(@InjectDefaultCollection('BrowsingSellerAds') private collection: MixinCollection) {}
     get() {
         return this.collection.getMulti([
             'sponsored_collection_content:0ab91168-b646-4b7d-a672-06cdc534fe7b_10985771',
